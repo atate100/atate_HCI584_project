@@ -8,7 +8,7 @@ import csv
 import os
 
 # Print the current working directory
-st.write(f"Current working directory: {os.getcwd()}")
+st.write(f"Current working directory: {os.getcwd()}") # Debug
 
 # Define the questions
 questions = [
