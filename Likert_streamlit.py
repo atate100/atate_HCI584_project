@@ -1,6 +1,7 @@
 # pip install streamlit
 # to run the Streamlit server open a terminal an run this:
 # streamlit run Likert_streamlit.py
+# streamlit run /Users/amendatate/Documents/HCI584/atate_HCI584_project/Likert_streamlit.py
 
 
 import streamlit as st
