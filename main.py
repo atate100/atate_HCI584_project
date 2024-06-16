@@ -1,6 +1,6 @@
 # pip install streamlit
 # to run the Streamlit server open a terminal an run this:
-# streamlit run Likert_streamlit2.py
+# streamlit run /Users/amendatate/Documents/HCI584/atate_HCI584_project/main.py
 
 import streamlit as st
 import plot_likert
@@ -12,9 +12,12 @@ st.write(f"Current working directory: {os.getcwd()}")
 
 # Define the questions
 questions = [
-    "I find the interface of this app easy to use.",
-    "The content provided by this app is useful.",
-    "I would recommend this app to others."
+    "I felt happy.",
+    "I felt engaged.",
+    "I felt comfortable.",
+    "I felt safe and secure.",
+    "I enjoyed the company of other people.",
+    "I talked to other people.",
 ]
 
 # Define the Likert scale
@@ -22,14 +25,14 @@ scale = plot_likert.scales.agree5
 
 # Create a dictionary to store the responses
 responses = {}
-print(responses) # Debug
+print(responses)  # Debug
 
 # Display a label Name with a text input
 name = st.text_input("Name", "Your name")
 
 # Display the questions and the Likert scale
 for question in questions:
-    responses[question] = st.radio(question, options=scale, index=2) # start at neutral
+    responses[question] = st.radio(question, options=scale, index=2)  # start at neutral
 
 # Display the text field for comments
 comments = st.text_area("Any additional comments?")
@@ -45,13 +48,14 @@ if st.button('Submit'):
     
     # Prepare the record for saving
     record = [name] + [responses[question] for question in questions] + [comments]
+    st.write(f"Record to be saved: {record}")  # Debug
     
     # Define the header
     header = ["Name"] + questions + ["Comments"]
     
     try:
         # Determine the file path
-        file_path = "survey.csv"
+        file_path = "wellbeing_survey.csv"
         
         # Open the CSV file in append mode, creating it if it doesn't exist
         with open(file_path, "a", newline='', encoding='utf-8') as fo:
