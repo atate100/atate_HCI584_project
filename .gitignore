@@ -1,3 +1,10 @@
+# API key file: Do NOT hardcode API keys in any code file that will end up on github! Others can (mis-)use it and everything on github lives forever! Instead do this:
+
+    # put your key(s) into a keys.py file and read them in as strings at the start of your main program (See refresher 6, data storage)
+    # put keys.py at the top of your .gitignore file, this means it will not ever accidentally end up on github.
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
