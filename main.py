@@ -5,9 +5,14 @@ import streamlit as st
 import plot_likert
 import csv
 import os
+import numpy as np
+import pandas as pd
 
-# Print the current working directory
-st.write(f"Current working directory: {os.getcwd()}") # Debug
+import warnings
+
+# Suppress FutureWarnings from plot_likert library
+warnings.filterwarnings("ignore", category=FutureWarning, module="plot_likert")
+
 
 # Define the questions
 questions = [
@@ -45,9 +50,10 @@ if st.button('Submit'):
     st.write("Comments:")
     st.write(comments)
     
+    
     # Prepare the record for saving
     record = [name] + [responses[question] for question in questions] + [comments]
-    st.write(f"Record to be saved: {record}")  # Debug
+    # st.write(f"Record to be saved: {record}")  # Debug
     
     # Define the header
     header = ["Name"] + questions + ["Comments"]
@@ -71,3 +77,4 @@ if st.button('Submit'):
         
     except Exception as e:
         st.error(f"An error occurred while saving your responses: {e}")
+
