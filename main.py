@@ -1,7 +1,6 @@
 # pip install streamlit
 # to run the Streamlit server open a terminal an run this:
-# streamlit run /Users/amendatate/Documents/HCI584/atate_HCI584_project/main.py
-
+# streamlit run /Users/amendatate/Documents/HCI584/museum_wellbeing_survey/main.py
 import streamlit as st
 import plot_likert
 import csv
@@ -55,7 +54,7 @@ if st.button('Submit'):
     
     try:
         # Determine the file path
-        file_path = "wellbeing_survey.csv"
+        file_path = "/Users/amendatate/Documents/HCI584/museum_wellbeing_survey/data/wellbeing_survey.csv"
         
         # Open the CSV file in append mode, creating it if it doesn't exist
         with open(file_path, "a", newline='', encoding='utf-8') as fo:
