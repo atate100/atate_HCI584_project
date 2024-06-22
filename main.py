@@ -1,6 +1,8 @@
 # pip install streamlit
 # to run the Streamlit server open a terminal an run this:
-# streamlit run /Users/amendatate/Documents/HCI584/museum_wellbeing_survey/main.py
+# cd museum_wellbeing_survey
+# streamlit run main.py
+
 import streamlit as st
 import plot_likert
 import csv
