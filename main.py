@@ -46,8 +46,8 @@ if 'init_done' not in st.session_state:
     # check where the interpreter is "sitting", must be the root of the project
     # To ensure this, you must open the project root folder(!) in VSCode and then
     # start this file, not just load this file into the editor 
-    print("Current working directory:", os.getcwd())
-    print("files in data folder:", os.listdir("./data"))
+    #print("Current working directory:", os.getcwd())
+    #print("files in data folder:", os.listdir("./data"))
     file_path = "./data/wellbeing_survey.csv"
 
     # do we already have the file?
