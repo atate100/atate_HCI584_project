@@ -1,5 +1,5 @@
 # pip install streamlit
-# to run the Streamlit server open a terminal an run this:
+# to run the Streamlit server open a terminal and run this:
 # cd museum_wellbeing_survey
 # streamlit run main.py
 
@@ -113,4 +113,4 @@ if st.button('Submit'):
     # this may be needed b/c unless this app is closed, the file will not be closed
     # and so anything in the buffer will be lost
         
-    st.success("Your responses have been recorded successfully!")'
+    st.success("Your responses have been recorded successfully!")
