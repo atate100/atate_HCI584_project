@@ -7,13 +7,14 @@ import csv
 import os
 import numpy as np
 import pandas as pd
+import subprocess
 
 import warnings
 
 # Suppress FutureWarnings from plot_likert library
 warnings.filterwarnings("ignore", category=FutureWarning, module="plot_likert")
 
-
+if 'init_done' not in st.session_state:
 # Define the questions
 questions = [
     "I felt happy.",
