@@ -1,14 +1,18 @@
 # pip install streamlit
 # to run the Streamlit server open a terminal an run this:
-# streamlit run /Users/amendatate/Documents/HCI584/atate_HCI584_project/main.py
-
+# streamlit run /Users/amendatate/Documents/HCI584/museum_wellbeing_survey/main.py
 import streamlit as st
 import plot_likert
 import csv
 import os
+import numpy as np
+import pandas as pd
 
-# Print the current working directory
-st.write(f"Current working directory: {os.getcwd()}") # Debug
+import warnings
+
+# Suppress FutureWarnings from plot_likert library
+warnings.filterwarnings("ignore", category=FutureWarning, module="plot_likert")
+
 
 # Define the questions
 questions = [
@@ -46,16 +50,17 @@ if st.button('Submit'):
     st.write("Comments:")
     st.write(comments)
     
+    
     # Prepare the record for saving
     record = [name] + [responses[question] for question in questions] + [comments]
-    st.write(f"Record to be saved: {record}")  # Debug
+    # st.write(f"Record to be saved: {record}")  # Debug
     
     # Define the header
     header = ["Name"] + questions + ["Comments"]
     
     try:
         # Determine the file path
-        file_path = "wellbeing_survey.csv"
+        file_path = "/Users/amendatate/Documents/HCI584/museum_wellbeing_survey/data/wellbeing_survey.csv"
         
         # Open the CSV file in append mode, creating it if it doesn't exist
         with open(file_path, "a", newline='', encoding='utf-8') as fo:
@@ -72,3 +77,4 @@ if st.button('Submit'):
         
     except Exception as e:
         st.error(f"An error occurred while saving your responses: {e}")
+
